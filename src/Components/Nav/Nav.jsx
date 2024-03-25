@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
     return (
-        <div className="navbar bg-base-500 p-0">
+        <div className="navbar bg-base-500 p-0 mt-9">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -13,10 +13,6 @@ const Nav = () => {
         <li><a>Item 1</a></li>
         <li>
           <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
         </li>
         <li><a>Item 3</a></li>
       </ul>
@@ -24,14 +20,16 @@ const Nav = () => {
     <a className="btn btn-ghost text-2xl font-bold p-0 ">Book Vibe</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 gap-7 font-bold">
-     <NavLink to='/'>Home</NavLink>
-     <NavLink to='/books'>Listed Books</NavLink>
-     <NavLink to='/pageRead'>Pages to Read</NavLink>
+    <ul className=" menu-horizontal px-1 gap-10 ">
+     <li><NavLink to='/' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 py-1 px-2 rounded-md font-bold' : ''}>Home</NavLink></li>
+     <li><NavLink to='/books' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 py-1 px-2 rounded-md font-bold' : ''}>Listed Books</NavLink></li>
+     <li><NavLink to='/pageRead' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 py-1 px-2 rounded-md font-bold' : ''}>Pages to Read</NavLink></li>
+     
+     
     </ul>
   </div>
   <div className="navbar-end gap-4">
-    <a className="btn bg-green-500">Sign In</a>
+    <a className="btn bg-green-500 py-">Sign In</a>
     <a className="btn bg-teal-500">Sign Up</a>
   </div>
 </div>
