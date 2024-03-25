@@ -4,7 +4,7 @@ import { FaRegStar } from "react-icons/fa";
 const Cards = ({ card }) => {
     const { bookName, image, category, author, rating, tags } = card;
     return (
-        <div className="card bg-base-100 shadow-xl border">
+        <div className="card bg-base-100 shadow-xl border cursor-pointer">
             <figure className="px-7 pt-10 ">
                 <img src={image} alt="Shoes" className="rounded-xl h-[300px] w-full bg-base-200 border p-16" />
             </figure>
