@@ -17,7 +17,7 @@ const Nav = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-3xl font-bold p-0 ">Book Vibe</a>
+    <a className="btn btn-ghost text-3xl font-bold p-0 ">Book House</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className=" menu-horizontal px-1 gap-10 ">
