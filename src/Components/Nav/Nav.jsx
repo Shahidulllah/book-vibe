@@ -17,20 +17,20 @@ const Nav = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-2xl font-bold p-0 ">Book Vibe</a>
+    <a className="btn btn-ghost text-3xl font-bold p-0 ">Book Vibe</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className=" menu-horizontal px-1 gap-10 ">
-     <li><NavLink to='/' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 py-1 px-2 rounded-md font-bold' : ''}>Home</NavLink></li>
-     <li><NavLink to='/books' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 py-1 px-2 rounded-md font-bold' : ''}>Listed Books</NavLink></li>
-     <li><NavLink to='/pageRead' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 py-1 px-2 rounded-md font-bold' : ''}>Pages to Read</NavLink></li>
+     <li><NavLink to='/' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 px-4 py-2 rounded-md font-bold' : ''}>Home</NavLink></li>
+     <li><NavLink to='/books' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 px-4 py-2 rounded-md font-bold' : ''}>Listed Books</NavLink></li>
+     <li><NavLink to='/pageRead' className={({isActive})=>isActive? 'text-green-500 border-2 border-green-500 px-4 py-2 rounded-md font-bold' : ''}>Pages to Read</NavLink></li>
      
      
     </ul>
   </div>
-  <div className="navbar-end gap-4">
-    <a className="btn bg-green-500 py-">Sign In</a>
-    <a className="btn bg-teal-500">Sign Up</a>
+  <div className="navbar-end gap-5">
+    <button className="px-7 py-3 rounded-lg bg-[#23BE0A] font-bold text-white ">Sign In</button>
+    <button className="px-7 py-3 rounded-lg bg-[#59C6D2] font-bold text-white">Sign Up</button>
   </div>
 </div>
     );
