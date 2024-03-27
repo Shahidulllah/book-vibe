@@ -1,6 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { saveBook } from "../../Utility/LocalStorage";
-import toast from "react-hot-toast";
 
 const Details = () => {
     const books = useLoaderData();
@@ -10,11 +9,11 @@ const Details = () => {
     const {bookName, image, category, author, rating, tags, review, yearOfPublishing, publisher, totalPages} = book;
 
     const HandleAddeRead = book => {
-        saveBook(book);
-        console.log(book);
+        saveBook(book);      
     };
-    const HandleWishlist = ()=> {
-        toast.success('Added to Wishlist Successfully..')
+    
+    const HandleWishlist = ()=> {    
+        saveBook(book);  
     }
     return (
         <div className=" bg-base-100 shadow-xl mt-10 mb-5">
