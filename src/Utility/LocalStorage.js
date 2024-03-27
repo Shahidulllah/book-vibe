@@ -1,22 +1,23 @@
-const getStoredBook = () =>{
-   const storedBook = localStorage.getItem('books') ;
-    if(storedBook){
-        return JSON.parse(storedBook);
+import toast from "react-hot-toast";
+
+export const getBooks = () =>{
+    let books = [];
+   const storedBooks = localStorage.getItem('books') ;
+    if(storedBooks){
+        books = JSON.parse(storedBooks);
     }
-    return [];
+    return books;
 }
 
 
 
-const saveBook = id =>{
-    const storedBooks = getStoredBook();
-    const exists = storedBooks.find(bookId=> bookId === id);
-    if(!exists){
-        storedBooks.push(id);
-        localStorage.setItem('books', JSON.stringify(storedBooks))
+export const saveBook = book =>{
+    let books = getBooks();
+    const isExist = books.find(b => b.id === book.id);
+    if(isExist){
+        return toast.error('Already Added..!')
     }
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books))
+    toast.success('Marked as Read Successfully..!')
 }
-
-
-
-export{getStoredBook ,saveBook}
