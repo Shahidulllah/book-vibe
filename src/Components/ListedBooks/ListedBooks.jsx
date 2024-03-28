@@ -1,17 +1,8 @@
 
 import { IoIosArrowDown } from "react-icons/io";
 import { NavLink, Outlet } from "react-router-dom";
-import ListedBooksCard from "../ListedBooksCard/ListedBooksCard";
-import { useEffect, useState } from "react";
-import { getBooks } from "../../Utility/LocalStorage";
-
 
 const ListedBooks = () => {
-    const [listedBooks, setListedBooks] = useState([]);
-    useEffect(() => {
-        const storedBooks = getBooks();
-        setListedBooks(storedBooks);
-    }, [])
     return (
         <div>
             <div className="bg-base-200 text-3xl font-bold text-center w-full py-7 rounded-xl mt-8">
@@ -31,19 +22,10 @@ const ListedBooks = () => {
             </div>
 
             <div className="flex gap-5 border-b border-gray-300 pt-10">
-                <NavLink to='listedBooks' className={({ isActive }) => isActive ? 'border-2 rounded-md  border-b-0 px-3 py-2 rounded-b-none' : 'py-2 px-3 text-gray-500'}> <button>Read Books: <span>{listedBooks.length}</span></button></NavLink>
-                <NavLink to='wishlist' className={({ isActive }) => isActive ? 'border-2 rounded-md  border-b-white px-3 py-2 rounded-b-none ' : 'py-2 px-3 text-gray-500'}> <button>Wishlist Books: {listedBooks.length}</button></NavLink>
+                <NavLink to='readBooks' className={({ isActive }) => isActive ? 'border-2 rounded-md  border-b-0 px-3 py-2 rounded-b-none' : 'py-2 px-3 text-gray-500'}> <button>Read Books</button></NavLink>
+                <NavLink to='wishlist' className={({ isActive }) => isActive ? 'border-2 rounded-md  border-b-white px-3 py-2 rounded-b-none ' : 'py-2 px-3 text-gray-500'}> <button>Wishlist Books</button></NavLink>
             </div>
-
-            <div className="grid grid-cols-1 ">
-                {
-                    listedBooks.map(book => <ListedBooksCard key={book.id} book={book} ></ListedBooksCard>)
-                }
-                <Outlet></Outlet>
-            </div>
-
-
-
+            <Outlet></Outlet>
         </div>
 
     );

@@ -9,8 +9,8 @@ const ListedBooksCard = ({book}) => {
     const { bookName, image, category, author, rating,totalPages, tags,yearOfPublishing, publisher} = book;
     return (
         <div className=" bg-base-100 mt-10 p-5 border rounded-xl  ">
-        <div className="h-[280px] flex gap-8">
-            <div className=" bg-base-200 rounded-lg flex justify-center items-center h-full  px-16 py-10">
+        <div className="lg:h-[280px] lg:flex gap-8">
+            <div className=" bg-base-200 rounded-lg flex justify-center items-center lg:h-full  px-4 lg:px-16 py-4 lg:py-10">
                 <img src={image} alt="Movie" className="h-full rounded-lg" />
             </div>
             <div className=" h-full w-full space-y-5 ">
